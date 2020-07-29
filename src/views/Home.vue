@@ -4,18 +4,15 @@
       <el-aside width="auto" class="home-aside" :class="{'animate__animated animate__bounce':anim}">
         <el-menu
           default-active="1-4-1"
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
+          class="menu-content"
           :collapse="true"
-          style="height:100%"
+          :router="true"
         >
-          <el-submenu index="1">
-            <template slot="title">
-              <el-image src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-image>
-            </template>
-          </el-submenu>
-          <el-menu-item index="2">
+          <el-menu-item index="dashboard">
+            <el-image src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-image>
+            <div slot="title">555</div>
+          </el-menu-item>
+          <el-menu-item index="tools">
             <i class="el-icon-menu"></i>
             <span slot="title">导航二</span>
           </el-menu-item>
@@ -23,9 +20,10 @@
             <i class="el-icon-document"></i>
             <span slot="title">导航三</span>
           </el-menu-item>
-          <el-menu-item index="4" style="align-self:end">
+          <div class="menu-bottom"></div>
+          <el-menu-item index="setting">
             <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
+            <span slot="title">设置</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -36,7 +34,7 @@
         </el-header>
         <el-main height>
           <!-- Main content -->
-          dd
+          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>
@@ -71,6 +69,14 @@ export default {
   height: 100%;
   .home-aside {
     height: 100%;
+    .menu-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .menu-bottom {
+        flex-grow: 1;
+      }
+    }
   }
 }
 
