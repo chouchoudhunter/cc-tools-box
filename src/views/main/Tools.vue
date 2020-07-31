@@ -1,13 +1,14 @@
 <template>
   <div class="tools">
-      68468946846
+      <Rename></Rename>
   </div>
 </template>
 
 <script>
+import Rename from '@/views/tools/Rename';
 export default {
   name: "Tools",
-  components: {},
+  components: {Rename},
   data() {
     return {
     };

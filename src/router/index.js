@@ -17,7 +17,8 @@ Vue.use(VueRouter)
     },{
       path:'tools',
       name:'Tools',
-      component:()=>import('../views/main/Tools.vue')
+      component:()=>import('../views/main/Tools.vue'),
+      
     },{
       path:'setting',
       name:'Setting',
