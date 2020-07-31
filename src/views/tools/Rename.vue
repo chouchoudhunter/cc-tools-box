@@ -3,7 +3,7 @@
     <div class="drop-box">
       <div class="content">拖动文件夹</div>
     </div>
-    <el-form :model="">
+    <el-form>
       <el-form-item label="文件夹地址">
         <el-input type="text">
       </el-form-item>
