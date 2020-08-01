@@ -2,14 +2,9 @@
   <div class="home">
     <el-container class="home-container">
       <el-aside width="auto" class="home-aside" :class="{'animate__animated animate__bounce':anim}">
-        <el-menu
-          default-active="1-4-1"
-          class="menu-content"
-          :collapse="true"
-          :router="true"
-        >
+        <el-menu default-active="1-4-1" class="menu-content" :collapse="true" :router="true">
           <el-menu-item index="dashboard">
-            <el-image src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-image>
+            <i class="el-icon-house"></i>
             <div slot="title">555</div>
           </el-menu-item>
           <el-menu-item index="tools">
@@ -28,9 +23,8 @@
         </el-menu>
       </el-aside>
       <el-container>
-        <el-header height>
+        <el-header height="20px">
           <!-- Header content -->
-          <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
         </el-header>
         <el-main height>
           <!-- Main content -->
@@ -74,31 +68,19 @@ export default {
       display: flex;
       flex-direction: column;
       .menu-bottom {
+        -webkit-app-region: drag;
         flex-grow: 1;
       }
     }
   }
-}
-
-//////////////////////////
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
+  .el-header,
+  .el-footer {
+    height: 10px;
+  }
 }
 
 .el-main {
   background-color: #e9eef3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
 }
 </style>

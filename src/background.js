@@ -1,48 +1,50 @@
 'use strict'
+import { app, protocol, BrowserWindow,ipcMain } from 'electron';
+import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
+import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
-import { app, protocol, BrowserWindow } from 'electron'
-import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
-import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
-const isDevelopment = process.env.NODE_ENV !== 'production'
-
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let win
-
+const winURL = isDevelopment ? process.env.WEBPACK_DEV_SERVER_URL: `file://${__dirname}/index.html`;
+let win;
+let subWindow;
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
-function createLevelSubWindow(){
-
+function createSubWindow(vueName){
+subWindow= new BrowserWindow({
+  width: 800,
+  height: 600,
+  frame:true,
+  webPreferences: {
+    nodeIntegration:true
+  }
+})
+subWindow.loadURL(winURL+'#/sub/'+vueName);
+subWindow.on('closed', () => { subWindow = null })
+if (!process.env.IS_TEST) subWindow.webContents.openDevTools();
 }
 function createWindow() {
-  // Create the browser window.
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    frame:false,
     webPreferences: {
-      // Use pluginOptions.nodeIntegration, leave this alone
-      // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: true
+      nodeIntegration:true
     }
   })
-
-  if (process.env.WEBPACK_DEV_SERVER_URL) {
-    // Load the url of the dev server if in development mode
-    win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
-    if (!process.env.IS_TEST) win.webContents.openDevTools()
-  } else {
-    createProtocol('app')
-    // Load the index.html when not in development
-    win.loadURL('app://./index.html')
-  }
-
+  win.loadURL(winURL)
+  if (!process.env.IS_TEST) win.webContents.openDevTools();
+  if(!isDevelopment)createProtocol('app');
   win.on('closed', () => {
     win = null
   })
 }
+ipcMain.on('createSubWindow', (e,data)=>{
+  createSubWindow(data);
+}
 
+)
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar

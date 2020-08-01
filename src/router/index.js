@@ -26,10 +26,14 @@ Vue.use(VueRouter)
     }]
   },
   {
-    path: '/about',
-    name: 'About',
-    // which is lazy-loaded when the route is visited.
-    component: () => import('../views/About.vue')
+    path: '/sub',
+    name: 'Sub',
+    component: () => import('../views/Sub.vue'),
+    children:[{
+      path:'rename',
+      name:'Rename',
+      component:()=>import('../views/tools/Rename.vue')
+    }]
   }
   
 ]

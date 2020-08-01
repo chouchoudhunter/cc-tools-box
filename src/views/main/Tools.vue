@@ -1,19 +1,22 @@
 <template>
   <div class="tools">
-      <Rename></Rename>
+    <div @click="openTool()">dakai rename</div>
   </div>
 </template>
 
 <script>
-import Rename from '@/views/tools/Rename';
+const { ipcRenderer } = window.require('electron')
 export default {
   name: "Tools",
-  components: {Rename},
+  components: {},
   data() {
     return {
     };
   },
   methods: {
+    openTool(){
+      ipcRenderer.send('createSubWindow','rename');
+    }
   },
   mounted() {
   }
