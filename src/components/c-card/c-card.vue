@@ -1,6 +1,5 @@
 <template>
     <div class="c-card">
-556
     </div>
 </template>
 <script>

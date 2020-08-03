@@ -27,7 +27,7 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background-color: rgb(255, 255, 255);
+  background-color: $bg-grey-light;
   height: 100%;
   border-radius: 15px;
   overflow: hidden;
