@@ -58,6 +58,7 @@ export default {
     let receiveDropDom = document.getElementById("drop-box");
     receiveDropDom.addEventListener("drop", e => {
       let files = e.dataTransfer.files;
+      console.log(files)
       //判断是不是一个文件
       if (files.length==1) {
         let matchReg=/(?<=[.].*)(?!.*[.]).*/;//获取文件类型
@@ -68,7 +69,7 @@ export default {
         if(isDirectory){//文件夹作为根文件夹，读取所有子文件
           files=fs.readdirSync(files[0].path);
         }else{
-          
+
         }
       }else{
         

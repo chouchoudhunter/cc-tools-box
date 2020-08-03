@@ -1,6 +1,6 @@
 <template>
   <div class="tools">
-    <div @click="openTool()">dakai rename</div>
+    <div @click="openTool()">打开重命名工具</div>
   </div>
 </template>
 

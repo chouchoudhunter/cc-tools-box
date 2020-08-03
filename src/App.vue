@@ -9,17 +9,29 @@ export default {
 };
 </script>
 <style lang="scss">
+
 body,
 html {
-  height: 100%;
+  height:100%;
+  width: 100%;
+  background-color: rgba(168, 158, 158, 0);
   margin: 0;
+}
+body{
+  height:calc(100% - 10px);
+  width:calc(100% - 10px);
+  margin: 5px;
 }
 #app {
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: rgb(255, 255, 255);
   height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow:0px 0px 5px rgba(131, 131, 131, 0.466);
 }
 
 #nav {

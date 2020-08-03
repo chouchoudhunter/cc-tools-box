@@ -26,9 +26,11 @@ if (!process.env.IS_TEST) subWindow.webContents.openDevTools();
 }
 function createWindow() {
   win = new BrowserWindow({
-    width: 800,
+    width: 900,
     height: 600,
     frame:false,
+    transparent: true,
+    resizable:false,
     webPreferences: {
       nodeIntegration:true
     }

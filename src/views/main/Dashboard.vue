@@ -1,13 +1,14 @@
 <template>
   <div class="dashboard">
-      控制台
+      <ccard></ccard>
   </div>
 </template>
 
 <script>
+import ccard from '@/components/c-card/c-card.vue';
 export default {
   name: "Dashboard",
-  components: {},
+  components: {ccard},
   data() {
     return {
     };
