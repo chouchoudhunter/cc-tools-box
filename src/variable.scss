@@ -5,3 +5,11 @@ $grey:#dbdbdb;
 $bg-white:#f8f8f8;
 $bg-grey-light:#f1f1f3;
 //
+$gradient-pink: linear-gradient(135deg,  #f9728b 1%,#f98696 26%,#ffbca5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+$gradient-purple: linear-gradient(45deg,  #6771f7 23%,#7e4bed 55%,#773dee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+.bg-pink{
+    background: $gradient-pink;
+}
+.bg-white{
+    background: #ffffff;
+}

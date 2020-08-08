@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
       <div class="main-circle">
-
+        <ccard class="bg-pink"></ccard>
       </div>
   </div>
 </template>

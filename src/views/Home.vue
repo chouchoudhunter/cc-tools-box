@@ -37,7 +37,7 @@
           <!-- <div class="right">
             <font-awesome-icon :icon="['fas', 'bell']"></font-awesome-icon>
           </div>-->
-          <div class="item">
+          <div class="item active">
             <h3>Dashboard</h3>
           </div>
           <div class="item">
@@ -177,9 +177,13 @@ $menu-item-width: 35px;
           padding: 5px 0;
           width: 100px;
           text-align: center;
-          background-color: white;
+          
           margin: 0 30px;
           border-radius: 20px;
+
+        }
+        .active{
+          background-color: white;
           box-shadow:0px 0px 8px rgba(201, 201, 201, 0.514);
         }
         // .title {
