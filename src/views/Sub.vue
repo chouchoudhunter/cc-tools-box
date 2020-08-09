@@ -9,3 +9,8 @@ export default {
   name:'Sub'
 }
 </script>
+<style lang="scss">
+body{
+  background-color: rgba(255, 0, 0, 0)
+}
+</style>

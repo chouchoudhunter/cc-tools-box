@@ -13,3 +13,6 @@ $gradient-purple: linear-gradient(45deg,  #6771f7 23%,#7e4bed 55%,#773dee 100%);
 .bg-white{
     background: #ffffff;
 }
+.bg-purple{
+    background:$gradient-purple;
+}

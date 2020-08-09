@@ -3,11 +3,11 @@
     <div class="drop-box" id="drop-box">
       <div class="content">拖动文件或文件夹</div>
     </div>
-    <el-form>
-      <el-form-item label="文件夹地址">
-        <el-input type="text"></el-input>
-      </el-form-item>
-    </el-form>
+    <div>
+      <div label="文件夹地址">
+        <input type="text">
+      </div>
+    </div>
     <div>
       <ctransfer></ctransfer>
     </div>

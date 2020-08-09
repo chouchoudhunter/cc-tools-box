@@ -1,14 +1,21 @@
 <template>
   <div class="tools">
-    <div @click="openTool()">打开重命名工具</div>
+    <div>
+      <ccard @click.native="openTool()" class="bg-purple">
+        <div slot="main">
+          重命名工具
+        </div>
+      </ccard>
+    </div>
   </div>
 </template>
 
 <script>
-const { ipcRenderer } = window.require('electron')
+const { ipcRenderer } = window.require('electron');
+import ccard from '@/components/c-card/c-card.vue';
 export default {
   name: "Tools",
-  components: {},
+  components: {ccard},
   data() {
     return {
     };

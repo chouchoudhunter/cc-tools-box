@@ -11,7 +11,6 @@
       </div>
       <div class="content">
         <div class="item">
-            <el-checkbox></el-checkbox>
             <div class="icon">
               <font-awesome-icon :icon="['far','file-alt']"/>
             </div>
@@ -44,7 +43,7 @@
       </div>
             <div class="content">
         <div class="item">
-            <el-checkbox></el-checkbox>
+            <input type="checkbox">
             <div class="icon">
               <font-awesome-icon :icon="['far','file-alt']"/>
             </div>

@@ -14,7 +14,7 @@ body,
 html {
   height:100%;
   width: 100%;
-  background-color: rgba(168, 158, 158, 0);
+  background-color: rgba(255, 255, 255, 0);
   margin: 0;
 }
 body{

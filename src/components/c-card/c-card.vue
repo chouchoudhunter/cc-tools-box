@@ -32,6 +32,7 @@ export default {
 <style lang="scss">
 .c-card {
         border-radius: 15px;
+        color: #ffffff;
     .content {
         padding: 15px;
         height: 100%;

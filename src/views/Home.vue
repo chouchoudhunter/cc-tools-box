@@ -6,17 +6,13 @@
           <div class="logo">
             <img src="@/assets/logo.png" />
           </div>
-          <div
-            class="user-card"
-            :class="{'user-card-active':activeBtn['dashboard']}"
-            @click="goPage('dashboard')"
-          >
+          <div class="user-card">
             <div class="text">丑丑</div>
           </div>
-          <div class="item" :class="{'active':activeBtn['tools']}" @click="goPage('tools')">
+          <div class="item">
             <font-awesome-icon :icon="['fas', 'toolbox']"></font-awesome-icon>
           </div>
-          <div class="item" :class="{'active':activeBtn[2]}">
+          <div class="item">
             <font-awesome-icon :icon="['fas', 'user']"></font-awesome-icon>
           </div>
           <div class="place-block" style="-webkit-app-region: drag;"></div>
@@ -37,10 +33,10 @@
           <!-- <div class="right">
             <font-awesome-icon :icon="['fas', 'bell']"></font-awesome-icon>
           </div>-->
-          <div class="item active">
+          <div class="item" :class="{'active':activeBtn['dashboard']}" @click="goPage('dashboard')">
             <h3>Dashboard</h3>
           </div>
-          <div class="item">
+          <div class="item" :class="{'active':activeBtn['tools']}" @click="goPage('tools')">
             <h3>Tools</h3>
           </div>
         </div>
@@ -59,12 +55,10 @@ export default {
   data() {
     return {
       anim: false,
-      activeBtn: [
-        {
+      activeBtn:{
           dashboard: true,
           tools: false
-        }
-      ],
+        },
       activeMenu: "dashboard"
     };
   },
@@ -117,7 +111,7 @@ $menu-item-width: 35px;
         height: 95%;
         background-color: $bg-white;
         border-radius: 15px;
-        box-shadow:0px 0px 12px rgba(201, 201, 201, 0.356);
+        box-shadow: 0px 0px 12px rgba(201, 201, 201, 0.356);
         .logo {
           width: $menu-width;
           height: 80px;
@@ -173,18 +167,17 @@ $menu-item-width: 35px;
         align-items: center;
         justify-content: center;
         -webkit-app-region: drag;
-        .item{
+        .item {
           padding: 5px 0;
           width: 100px;
           text-align: center;
-          
+          -webkit-app-region: no-drag;
           margin: 0 30px;
           border-radius: 20px;
-
         }
-        .active{
+        .active {
           background-color: white;
-          box-shadow:0px 0px 8px rgba(201, 201, 201, 0.514);
+          box-shadow: 0px 0px 8px rgba(201, 201, 201, 0.514);
         }
         // .title {
         //   display: flex;
@@ -206,7 +199,6 @@ $menu-item-width: 35px;
       }
       .home-main {
         flex-grow: 1;
-        
       }
     }
   }

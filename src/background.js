@@ -15,7 +15,8 @@ function createSubWindow(vueName){
 subWindow= new BrowserWindow({
   width: 800,
   height: 600,
-  frame:true,
+  frame:false,
+  resizable:false,
   webPreferences: {
     nodeIntegration:true
   }
